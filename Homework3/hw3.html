@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+​<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+​<body>
+  
+    <div class="text-center">
+  
+        <h1 class="text-center">Press To</h1>
+        
+        <div class="text-center">
+            
+            <button id="password" class="btn btn-primary btn-lg"><h1>Generate Password</h1></button>
+        
+        </div>
+        
+    </div>
+    
+    <script type="text/javascript">
+  
+        $("#password").on("click", function () {
+            alert(stringPassword);
+        });
+        number = '0123456789'.split('');
+        lowercase = 'abcdefghijklmnopqrstuvwxyz'.split('');
+        uppercase = 'ABCDEFGHIJLMNOPQRTSTUVWXYZ'.split('');
+        special = '!@#$%^&*()'.split('');
+        passwordAssortment = [number, lowercase, uppercase, special];
+        
+        var finalPassword = [];
+        for (var i = 0; i < 10; i++) {
+
+        var random = Math.floor(Math.random() * 4);
+        var randomtwo = Math.floor(Math.random() * 26);
+        //console.log(random,randomtwo);
+        //console.log(passwordAssortment);
+        var currentchar = passwordAssortment[random][randomtwo];
+        finalPassword.push(currentchar);
+        }
+        
+        //console.log(finalPassword);
+
+        var stringPassword = finalPassword.join('');
+
+        console.log(stringPassword);
+
+    </script>
+    
+</body>
+​</html>
